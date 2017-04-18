@@ -11,15 +11,15 @@
 
     <parent>
         <groupId>org.hibernate.ogm</groupId>
-        <artifactId>hibernate-ogm-contrib-parent</artifactId>
+        <artifactId>hibernate-ogm-couchdb-parent</artifactId>
         <version>5.2.0-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <artifactId>hibernate-ogm-contrib-documentation</artifactId>
+    <artifactId>hibernate-ogm-couchdb-documentation</artifactId>
     <packaging>pom</packaging>
 
-    <name>Hibernate OGM Documentation</name>
+    <name>Hibernate OGM Documentation For CouchDB</name>
     <description>Grouping of Hibernate OGM Project documentation modules</description>
 
     <properties>

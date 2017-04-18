@@ -8,59 +8,28 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.hibernate.ogm</groupId>
-        <artifactId>hibernate-ogm-contrib-parent</artifactId>
+        <artifactId>hibernate-ogm-couchdb-parent</artifactId>
         <version>5.2.0-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <artifactId>hibernate-ogm-contrib-modules</artifactId>
+    <artifactId>hibernate-ogm-couchdb-modules</artifactId>
     <packaging>pom</packaging>
 
-    <name>Hibernate OGM WildFly Module</name>
-    <description>Hibernate OGM modules creation to use in WildFly</description>
+    <name>Hibernate OGM CouchDB WildFly Module</name>
+    <description>Hibernate OGM CouchDB modules creation to use in WildFly</description>
 
     <properties>
         <module.xml.basedir>${basedir}/src/main/modules</module.xml.basedir>
         <module.xml.aliases.basedir>${basedir}/src/main/aliases</module.xml.aliases.basedir>
-		<hibernate.ogm.module.slot>${parsedVersion.majorVersion}.${parsedVersion.minorVersion}</hibernate.ogm.module.slot>
-        <hibernate.ogm.ehcache.module.slot>${hibernate.ogm.module.slot}</hibernate.ogm.ehcache.module.slot>
-        <hibernate.ogm.cassandra.module.slot>${hibernate.ogm.module.slot}</hibernate.ogm.cassandra.module.slot>
+        <hibernate.ogm.module.slot>${parsedVersion.majorVersion}.${parsedVersion.minorVersion}</hibernate.ogm.module.slot>
         <hibernate.ogm.couchdb.module.slot>${hibernate.ogm.module.slot}</hibernate.ogm.couchdb.module.slot>
-        <hibernate.ogm.redis.module.slot>${hibernate.ogm.module.slot}</hibernate.ogm.redis.module.slot>
-        <hibernate.hql.module.slot>${hibernateHqlParserVersion}</hibernate.hql.module.slot>
     </properties>
-
-    <dependencyManagement>
-        <dependencies>
-            <!-- Overriding the version used for tests in OGM (managed in the parent) with the one used by the C* driver -->
-            <dependency>
-                <groupId>com.google.guava</groupId>
-                <artifactId>guava</artifactId>
-                <optional>true</optional>
-                <version>${cassandraGuavaVersion}</version>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
 
     <dependencies>
         <dependency>
             <groupId>org.hibernate.ogm</groupId>
-            <artifactId>hibernate-ogm-ehcache</artifactId>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>org.hibernate.ogm</groupId>
             <artifactId>hibernate-ogm-couchdb</artifactId>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>org.hibernate.ogm</groupId>
-            <artifactId>hibernate-ogm-cassandra</artifactId>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>org.hibernate.ogm</groupId>
-            <artifactId>hibernate-ogm-redis</artifactId>
             <optional>true</optional>
         </dependency>
     </dependencies>

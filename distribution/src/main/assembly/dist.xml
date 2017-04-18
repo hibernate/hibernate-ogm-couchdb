@@ -26,21 +26,6 @@
     <dependencySets>
         <!--
         #######################################################################
-        #  hibernate-ogm-ehcache
-        #######################################################################
-         -->
-        <dependencySet>
-            <useProjectArtifact>false</useProjectArtifact>
-            <outputDirectory>dist/lib/ehcache</outputDirectory>
-            <useTransitiveFiltering>true</useTransitiveFiltering>
-            <unpack>false</unpack>
-            <includes>
-                <include>org.hibernate.ogm:hibernate-ogm-ehcache</include>
-            </includes>
-        </dependencySet>
-
-        <!--
-        #######################################################################
         #  hibernate-ogm-couchdb
         #######################################################################
          -->
@@ -52,36 +37,6 @@
             <includes>
                 <include>org.hibernate.ogm:hibernate-ogm-couchdb</include>
              </includes>
-        </dependencySet>
-
-        <!--
-        #######################################################################
-        #  hibernate-ogm-cassandra
-        #######################################################################
-        -->
-        <dependencySet>
-            <useProjectArtifact>false</useProjectArtifact>
-            <outputDirectory>dist/lib/cassandra</outputDirectory>
-            <useTransitiveFiltering>true</useTransitiveFiltering>
-            <unpack>false</unpack>
-            <includes>
-                <include>org.hibernate.ogm:hibernate-ogm-cassandra</include>
-            </includes>
-        </dependencySet>
-
-        <!--
-        #######################################################################
-        #  hibernate-ogm-redis
-        #######################################################################
-        -->
-        <dependencySet>
-            <useProjectArtifact>false</useProjectArtifact>
-            <outputDirectory>dist/lib/redis</outputDirectory>
-            <useTransitiveFiltering>true</useTransitiveFiltering>
-            <unpack>false</unpack>
-            <includes>
-                <include>org.hibernate.ogm:hibernate-ogm-redis</include>
-            </includes>
         </dependencySet>
     </dependencySets>
 

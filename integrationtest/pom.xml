@@ -67,7 +67,7 @@
                         <configuration>
                             <redirectTestOutputToFile>true</redirectTestOutputToFile>
                             <includes>
-                                <include>**/ehcache/*IT.java</include>
+                                <include>**/couchdb/*IT.java</include>
                             </includes>
                         </configuration>
                     </execution>
@@ -176,19 +176,13 @@
             <artifactId>hibernate-ogm-couchdb</artifactId>
             <scope>provided</scope>
         </dependency>
+        <!-- Infinispan remote is not exactly required by this project but the integration test
+             project register a service with arquillian and the class of the service is included
+             in this dependency -->
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>hibernate-ogm-redis</artifactId>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>hibernate-ogm-cassandra</artifactId>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>hibernate-ogm-ehcache</artifactId>
+            <artifactId>hibernate-ogm-infinispan-remote</artifactId>
+            <type>test-jar</type>
             <scope>provided</scope>
         </dependency>
 
