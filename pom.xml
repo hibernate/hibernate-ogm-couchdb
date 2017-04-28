@@ -22,6 +22,7 @@
 
     <modules>
         <module>couchdb</module>
+        <module>modules</module>
     </modules>
 
     <properties>
@@ -63,6 +64,11 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>hibernate-ogm-couchdb</artifactId>
+                <version>${project.version}</version>
+			</dependency>
+				<dependency>
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
                 <version>4.12</version>
@@ -733,16 +739,6 @@
     </repositories>
 
     <profiles>
-        <profile>
-            <id>non-jigsaw</id>
-            <activation>
-                <jdk>1.8</jdk>
-            </activation>
-            <modules>
-                <!-- The WildFly modules require the other modules to be enabled too -->
-                <module>modules</module>
-            </modules>
-        </profile>
         <profile>
             <id>jigsaw</id>
             <activation>
