@@ -19,7 +19,7 @@
     <artifactId>hibernate-ogm-couchdb-documentation</artifactId>
     <packaging>pom</packaging>
 
-    <name>Hibernate OGM Documentation For CouchDB</name>
+    <name>Hibernate OGM CouchDB Documentation</name>
     <description>Grouping of Hibernate OGM Project documentation modules</description>
 
     <properties>
