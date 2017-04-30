@@ -11,6 +11,31 @@
     <name>Hibernate OGM CouchDB Getting Started</name>
     <description>Full code for CouchDB Getting Started Guide</description>
 
+    <profiles>
+        <profile>
+            <id>default_host</id>
+            <activation>
+                <property>
+                    <name>!env.COUCHDB_HOSTNAME</name>
+                </property>
+            </activation>
+            <properties>
+                <couchdb.host>localhost:6984</couchdb.host>
+            </properties>
+        </profile>
+        <profile>
+            <id>custom_host</id>
+            <activation>
+                <property>
+                    <name>env.COUCHDB_HOSTNAME</name>
+                </property>
+            </activation>
+            <properties>
+                <couchdb.host>${env.COUCHDB_HOSTNAME}:${env.COUCHDB_PORT}</couchdb.host>
+            </properties>
+        </profile>
+    </profiles>
+
     <dependencyManagement>
         <dependencies>
             <dependency>

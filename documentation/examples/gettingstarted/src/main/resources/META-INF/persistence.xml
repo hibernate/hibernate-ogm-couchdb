@@ -12,9 +12,7 @@
                  in this example we pick CouchDB -->
             <property name="hibernate.ogm.datastore.provider" value="org.hibernate.ogm.datastore.couchdb.impl.CouchDBDatastoreProvider"/>
             <property name="hibernate.ogm.datastore.database" value="gettingstarted_db"/>
-            <!-- Set environment variables COUCHDB_HOSTNAME and COUCHDB_PORT to set
-                 the location of your CouchDB instance -->
-            <property name="hibernate.ogm.datastore.host" value="${env.COUCHDB_HOSTNAME}:${env.COUCHDB_PORT}"/>
+            <property name="hibernate.ogm.datastore.host" value="${couchdb.host}"/>
             <property name="hibernate.ogm.datastore.create_database" value="true"/>
         </properties>
     </persistence-unit>
