@@ -52,5 +52,9 @@ public class CouchDBTuplesSupplier implements TuplesSupplier {
 		@Override
 		public void close() {
 		}
+
+		@Override
+		public void remove() {
+		}
 	}
 }

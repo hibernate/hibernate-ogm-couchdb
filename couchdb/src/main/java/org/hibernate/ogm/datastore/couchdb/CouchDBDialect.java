@@ -184,7 +184,7 @@ public class CouchDBDialect extends AbstractGroupingByEntityDialect implements G
 				if ( isStoredInEntityStructure( associationKey.getMetadata(), associationContext.getAssociationTypeContext() ) ) {
 					if ( owningEntity == null ) {
 						owningEntity = (EntityDocument) couchDBAssociation.getOwningDocument();
-						optionsContext = associationContext.getAssociationTypeContext().getOwnerEntityOptionsContext();
+						optionsContext = associationContext.getAssociationTypeContext().getHostingEntityOptionsContext();
 					}
 				}
 				else {
@@ -204,9 +204,10 @@ public class CouchDBDialect extends AbstractGroupingByEntityDialect implements G
 						TuplePointer tuplePointer = getEmbeddingEntityTuplePointer( associationKey, associationContext );
 						owningEntity = getEntityFromTuple( tuplePointer.getTuple() );
 					}
+
 					if ( owningEntity != null ) {
 						owningEntity.unset( associationKey.getMetadata().getCollectionRole() );
-						optionsContext = associationContext.getAssociationTypeContext().getOwnerEntityOptionsContext();
+						optionsContext = associationContext.getAssociationTypeContext().getHostingEntityOptionsContext();
 					}
 				}
 				else {
