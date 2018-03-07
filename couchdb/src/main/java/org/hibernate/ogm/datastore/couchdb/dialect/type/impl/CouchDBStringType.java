@@ -6,12 +6,12 @@
  */
 package org.hibernate.ogm.datastore.couchdb.dialect.type.impl;
 
-import java.util.Comparator;
-
-import org.hibernate.engine.spi.SessionImplementor;
+import org.hibernate.engine.spi.SharedSessionContractImplementor;
 import org.hibernate.internal.util.compare.ComparableComparator;
 import org.hibernate.type.StringType;
 import org.hibernate.type.VersionType;
+
+import java.util.Comparator;
 
 /**
  * A {@link StringType} which implements the {@link VersionType} contract and thus supports optimistic locking done by
@@ -24,12 +24,12 @@ public class CouchDBStringType extends StringType implements VersionType<String>
 	public static final CouchDBStringType INSTANCE = new CouchDBStringType();
 
 	@Override
-	public String seed(SessionImplementor session) {
+	public String seed(SharedSessionContractImplementor session) {
 		return null;
 	}
 
 	@Override
-	public String next(String current, SessionImplementor session) {
+	public String next(String current, SharedSessionContractImplementor session) {
 		return current;
 	}
 
